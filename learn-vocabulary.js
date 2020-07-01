@@ -29,7 +29,7 @@ function displayWord() {
 	const word = words[iIndex].content.word;
 	
 	let syno = word.content.syno;
-	if (syno === undefined) {
+	if (syno === undefined && word.content.realExamSentence !== undefined) {
 		syno = word.content.realExamSentence.syno;
 	}
 	if (syno === undefined) {

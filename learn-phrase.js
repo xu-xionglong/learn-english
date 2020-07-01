@@ -13,7 +13,6 @@ let phrases = [];
 lines.forEach((line) => {
 
 	if (line !== '' && line !== '\r') {
-		console.log(lines)
 		phrases.push(line)
 	}
 })
@@ -50,12 +49,12 @@ stdin.on('data', function(key){
 	}
     else if (key == '\u001B\u005B\u0044') {
     	//left
-		iIndex = iIndex === 0 ? iIndex : iIndex - 1;
+		iIndex = iIndex === 0 ? phrases.length / 2 - 1 : iIndex - 1;
 		showEnlish = false;
     }
     else if (key === '\u001B\u005B\u0043') {
     	//right
-    	iIndex = (iIndex + 1) * 2  === phrases.length ? iIndex : iIndex + 1;
+    	iIndex = (iIndex + 1) * 2  === phrases.length ? 0 : iIndex + 1;
 		showEnlish = false;
     }
     else if (key === '\u0003') {
